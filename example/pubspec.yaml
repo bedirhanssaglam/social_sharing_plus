@@ -1,0 +1,23 @@
+name: social_sharing_plus_example
+description: "Demonstrates how to use the social_sharing_plus plugin."
+publish_to: 'none'
+
+environment:
+  sdk: '>=2.17.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  social_sharing_plus:
+    path: ../
+  image_picker: ^0.8.4+4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+
+  uses-material-design: true

@@ -1,0 +1,28 @@
+PODS:
+  - Flutter (1.0.0)
+  - image_picker_ios (0.0.1):
+    - Flutter
+  - social_sharing_plus (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
+  - social_sharing_plus (from `.symlinks/plugins/social_sharing_plus/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  image_picker_ios:
+    :path: ".symlinks/plugins/image_picker_ios/ios"
+  social_sharing_plus:
+    :path: ".symlinks/plugins/social_sharing_plus/ios"
+
+SPEC CHECKSUMS:
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  image_picker_ios: c560581cceedb403a6ff17f2f816d7fea1421fc1
+  social_sharing_plus: 4de905e24a6bd238241cf995a849c4271dd0a47e
+
+PODFILE CHECKSUM: c2815800a22576b3d3c1e7218627f82d576b3c1d
+
+COCOAPODS: 1.15.2

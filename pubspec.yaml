@@ -1,0 +1,33 @@
+name: social_sharing_plus
+description: "A Flutter plugin for sharing content and images to social media platforms like Facebook, Twitter, LinkedIn, WhatsApp, Reddit, and Telegram."
+version: 0.0.1
+homepage: https://github.com/bedirhanssaglam/social_sharing_plus
+repository: https://github.com/bedirhanssaglam/social_sharing_plus
+issue_tracker: https://github.com/bedirhanssaglam/social_sharing_plus/issues
+topics: [social, share, plugin]
+platforms:
+  android:
+  ios:
+
+environment:
+  sdk: '>=2.17.0 <4.0.0'
+  flutter: '>=3.3.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  plugin_platform_interface: ^2.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.example.social_sharing_plus
+        pluginClass: SocialSharingPlusPlugin
+      ios:
+        pluginClass: SocialSharingPlusPlugin
