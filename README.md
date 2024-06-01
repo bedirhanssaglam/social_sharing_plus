@@ -12,6 +12,8 @@
 
 - [Screenshots](#screenshots)
 
+- [Dart Version](#dart-version)
+
 - [Issues](#issues)
 
 - [Contribute](#contribute)
@@ -185,7 +187,7 @@ class _SharePageState extends State<SharePage> {
 | ----------------------- | -------- | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
 |                                                                                                                                                                    |
 | socialPlatform      | true     |                           | Platform you want to share on                                                                                                                                              |
-| content        | true     |      | Any text you want to share (URL only for Facebook)                                                                                          |
+| content        | true     |      | Any text you want to share                                                                                          |
 | image                    | false     |      | The image you want to share                                                                                                 |
 | isOpenBrowser             | false    | `true` | If the relevant application is not installed, it redirects to the link (browser) of the relevant application. |
 | onAppNotInstalled          | false    |             | This method works if the application is not installed and the `isOpenBrowser` value is set to false. (For example: Showing a Snackbar like "The application is not installed on your device."...) |
@@ -202,6 +204,12 @@ class _SharePageState extends State<SharePage> {
   <img src="https://github.com/bedirhanssaglam/social_sharing_plus/assets/105479937/231e2a6e-6f84-45af-aef8-97da6869ec6f" width=100" />
   <img src="https://github.com/bedirhanssaglam/social_sharing_plus/assets/105479937/fafa227a-f89a-4cab-9b7f-2bd13daf7987" width=100" />
 </p>
+
+### Dart Version
+
+```yaml
+  sdk: '>=2.17.0 <4.0.0'
+```
 
 ### Issues
 
