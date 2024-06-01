@@ -1,8 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:social_sharing_plus/src/social_platform.dart';
-
-import 'social_sharing_plus_platform_interface.dart';
+import 'package:social_sharing_plus/src/social_sharing_plus_platform_interface.dart';
 
 /// An implementation of [SocialSharingPlusPlatform] that uses method channels.
 class MethodChannelSocialSharingPlus extends SocialSharingPlusPlatform {
@@ -21,8 +20,8 @@ class MethodChannelSocialSharingPlus extends SocialSharingPlusPlatform {
   Future<void> shareToSocialMedia(
     SocialPlatform platform,
     String content, {
-    String? image,
     required bool isOpenBrowser,
+    String? image,
     VoidCallback? onAppNotInstalled,
   }) async {
     try {
@@ -36,7 +35,7 @@ class MethodChannelSocialSharingPlus extends SocialSharingPlusPlatform {
         onAppNotInstalled?.call();
         return;
       }
-      throw 'Failed to share to $platform: ${e.message}';
+      throw Exception('Failed to share to $platform: ${e.message}');
     }
   }
 }

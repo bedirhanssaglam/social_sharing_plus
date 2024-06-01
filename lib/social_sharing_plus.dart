@@ -1,21 +1,22 @@
-library social_sharing_plus;
-
 import 'package:flutter/foundation.dart' show VoidCallback;
 import 'package:social_sharing_plus/src/social_platform.dart';
-
-import 'src/social_sharing_plus_platform_interface.dart';
+import 'package:social_sharing_plus/src/social_sharing_plus_platform_interface.dart';
 
 export 'src/social_platform.dart';
 
+/// A singleton class for sharing content to social media platforms.
+///
+/// This class provides a singleton instance to share content to various social media platforms.
+/// It follows the singleton pattern, ensuring that only one instance of the class is created.
 class SocialSharingPlus {
-  /// A singleton instance of [SocialSharingPlus].
-  static final SocialSharingPlus _instance = SocialSharingPlus._internal();
+  /// Factory constructor to return the singleton instance.
+  factory SocialSharingPlus() => _instance;
 
   /// Private constructor for [SocialSharingPlus] to implement singleton pattern.
   SocialSharingPlus._internal();
 
-  /// Factory constructor to return the singleton instance.
-  factory SocialSharingPlus() => _instance;
+  /// A singleton instance of [SocialSharingPlus].
+  static final SocialSharingPlus _instance = SocialSharingPlus._internal();
 
   /// Shares content to the specified social media platform.
   ///

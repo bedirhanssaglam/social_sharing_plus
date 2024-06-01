@@ -1,8 +1,7 @@
 import 'package:flutter/foundation.dart' show VoidCallback;
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 import 'package:social_sharing_plus/src/social_platform.dart';
-
-import 'social_sharing_plus_method_channel.dart';
+import 'package:social_sharing_plus/src/social_sharing_plus_method_channel.dart';
 
 abstract class SocialSharingPlusPlatform extends PlatformInterface {
   /// Constructs a SocialSharingPlusPlatform.
@@ -35,8 +34,8 @@ abstract class SocialSharingPlusPlatform extends PlatformInterface {
   Future<void> shareToSocialMedia(
     SocialPlatform platform,
     String content, {
-    String? image,
     required bool isOpenBrowser,
+    String? image,
     VoidCallback? onAppNotInstalled,
   });
 }
