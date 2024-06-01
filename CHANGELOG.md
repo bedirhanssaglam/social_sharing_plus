@@ -1,3 +1,7 @@
+# 0.0.3
+
+- Some codes improved, tests added
+
 # 0.0.2
 
 - Update documentation

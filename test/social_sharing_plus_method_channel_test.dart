@@ -2,16 +2,16 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:social_sharing_plus/social_sharing_plus.dart';
 import 'package:social_sharing_plus/src/social_sharing_plus_platform_interface.dart';
 
-import 'test_social_sharing_plus_platform.dart';
+import 'mock_social_sharing_plus_platform.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   group('SocialSharingPlus', () {
-    late TestSocialSharingPlusPlatform testPlatform;
+    late MockSocialSharingPlusPlatform testPlatform;
 
     setUp(() {
-      testPlatform = TestSocialSharingPlusPlatform();
+      testPlatform = MockSocialSharingPlusPlatform();
       SocialSharingPlusPlatform.instance = testPlatform;
     });
 

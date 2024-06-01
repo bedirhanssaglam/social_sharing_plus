@@ -3,7 +3,7 @@ import 'dart:ui' show VoidCallback;
 import 'package:social_sharing_plus/social_sharing_plus.dart';
 import 'package:social_sharing_plus/src/social_sharing_plus_platform_interface.dart';
 
-class TestSocialSharingPlusPlatform extends SocialSharingPlusPlatform {
+class MockSocialSharingPlusPlatform extends SocialSharingPlusPlatform {
   Future<void> Function(
     SocialPlatform platform,
     String content, {
