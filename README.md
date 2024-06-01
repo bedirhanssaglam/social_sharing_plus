@@ -193,14 +193,14 @@ class _SharePageState extends State<SharePage> {
 ### Screenshots
 
 <p float="left">
-  <img src="https://github.com/bedirhanssaglam/social_sharing_plus/assets/105479937/43a53dd2-69d1-46ab-8a4d-0e3411cea7c6" width=100" />
-  <img src="https://github.com/bedirhanssaglam/social_sharing_plus/assets/105479937/cdeac86c-ddc8-4d90-97bf-87e35c0fa743" width=100" />
-  <img src="https://github.com/bedirhanssaglam/social_sharing_plus/assets/105479937/eab23c5f-610c-4055-bc7f-4f357c46eb47" width=100" />
-  <img src="https://github.com/bedirhanssaglam/social_sharing_plus/assets/105479937/d86201cc-645e-4ed0-b19b-7c0bde793779" width=100" />
-  <img src="https://github.com/bedirhanssaglam/social_sharing_plus/assets/105479937/7647dadf-e654-42ce-8f16-51460546b46f" width=100" />
-  <img src="https://github.com/bedirhanssaglam/social_sharing_plus/assets/105479937/4b7a788f-8f7a-43d0-bfab-a1a88009a580" width=100" />
-  <img src="https://github.com/bedirhanssaglam/social_sharing_plus/assets/105479937/22bebfe7-088d-43b4-bd87-63086285537b" width=100" />
-  <img src="https://github.com/bedirhanssaglam/social_sharing_plus/assets/105479937/f59ae1f1-efb4-4b97-96b2-ea5155db4ade" width=100" />
+  <img src="https://github.com/bedirhanssaglam/social_sharing_plus/assets/105479937/273ab816-49f2-42e7-a73e-9535a5f73d15" width=100" />
+  <img src="https://github.com/bedirhanssaglam/social_sharing_plus/assets/105479937/7a56408d-fc44-4def-8bdf-b831923a5a1e" width=100" />
+  <img src="https://github.com/bedirhanssaglam/social_sharing_plus/assets/105479937/a2b5051d-9303-4eb7-a6f8-82615c1e340a" width=100" />
+  <img src="https://github.com/bedirhanssaglam/social_sharing_plus/assets/105479937/97b6e132-58b3-45bc-bff8-35f1ceedcd7b" width=100" />
+  <img src="https://github.com/bedirhanssaglam/social_sharing_plus/assets/105479937/b63be060-fa90-47b5-9f25-06ff31d3a1d9" width=100" />
+  <img src="https://github.com/bedirhanssaglam/social_sharing_plus/assets/105479937/ff960417-5627-4e90-a3c1-7a719868de62" width=100" />
+  <img src="https://github.com/bedirhanssaglam/social_sharing_plus/assets/105479937/231e2a6e-6f84-45af-aef8-97da6869ec6f" width=100" />
+  <img src="https://github.com/bedirhanssaglam/social_sharing_plus/assets/105479937/fafa227a-f89a-4cab-9b7f-2bd13daf7987" width=100" />
 </p>
 
 ### Issues
@@ -213,7 +213,7 @@ If you would like to contribute to the plugin (e.g. by improving the documentati
 
 ### Author
 
-This social_sharing plugin for Flutter is developed by [Bedirhan Sağlam](https://github.com/bedirhanssaglam). You can contact me at <bedirhansaglam270@gmail.com>
+This social_sharing_plus plugin for Flutter is developed by [Bedirhan Sağlam](https://github.com/bedirhanssaglam). You can contact me at <bedirhansaglam270@gmail.com>
 
 ### License
 
