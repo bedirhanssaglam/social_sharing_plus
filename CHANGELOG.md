@@ -1,3 +1,7 @@
+# 0.0.4
+
+- Fix platform specific codes
+
 # 0.0.3
 
 - Some codes improved, tests added
