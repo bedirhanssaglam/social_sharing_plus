@@ -4,42 +4,42 @@ enum SocialPlatform {
   ///
   /// For [iOS], only URL sharing is supported.
   ///
-  /// For [Android], you can share both text and images in groups, as a profile picture, as a post/story or message.
+  /// For [Android], you can share both text, images and video in groups, as a profile picture, as a post/story or message.
   facebook,
 
   /// Represents LinkedIn.
   ///
   /// For [iOS], only text sharing is supported.
   ///
-  /// For [Android], you can share both text and images in groups, as a post or message.
+  /// For [Android], you can share both text, images and video in groups, as a post or message.
   linkedin,
 
   /// Represents Reddit.
   ///
   /// For [iOS], only text sharing is supported.
   ///
-  /// For [Android], you can share both text and images as a post.
+  /// For [Android], you can share both text, images and video as a post.
   reddit,
 
   /// Represents Reddit.
   ///
   /// For [iOS], only text sharing is supported.
   ///
-  /// For [Android], you can share both text and images in groups, as a tweet or message.
+  /// For [Android], you can share both text, images and video in groups, as a tweet or message.
   twitter,
 
   /// Represents WhatsApp.
   ///
   /// For [iOS], only text sharing is supported.
   ///
-  /// For [Android], you can share both text and images in groups, as a tweet or message.
+  /// For [Android], you can share both text, images and video in groups, as a tweet or message.
   whatsapp,
 
   /// Represents Telegram.
   ///
   /// For [iOS], only text sharing is supported.
   ///
-  /// For [Android], you can share both text and images in groups, as a tweet or message.
+  /// For [Android], you can share both text, images and video in groups, as a tweet or message.
   telegram;
 
   /// Returns the method name corresponding to each social media platform.

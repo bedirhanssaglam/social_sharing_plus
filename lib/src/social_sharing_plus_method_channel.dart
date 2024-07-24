@@ -14,6 +14,7 @@ class MethodChannelSocialSharingPlus extends SocialSharingPlusPlatform {
   /// * [platform]: The platform to share the content on.
   /// * [content]: The content to be shared.
   /// * [image]: The image to be shared. (Android only)
+  /// * [media]: The video to be shared. (Android only)
   /// * [isOpenBrowser]: Whether to open a browser if the app is not installed.
   /// * [onAppNotInstalled]: Callback function to be called if the app is not installed. If `isOpenBrowser` is true, this method is ignored.
   @override
@@ -22,12 +23,14 @@ class MethodChannelSocialSharingPlus extends SocialSharingPlusPlatform {
     String content, {
     required bool isOpenBrowser,
     String? image,
+    String? media,
     VoidCallback? onAppNotInstalled,
   }) async {
     try {
       await methodChannel.invokeMethod(platform.methodName, {
         'content': content,
         'image': image,
+        'media': media,
         'isOpenBrowser': isOpenBrowser,
       });
     } on PlatformException catch (e) {

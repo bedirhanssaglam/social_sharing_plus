@@ -9,6 +9,7 @@ class MockSocialSharingPlusPlatform extends SocialSharingPlusPlatform {
     String content, {
     required bool isOpenBrowser,
     String? image,
+    String? media,
     VoidCallback? onAppNotInstalled,
   })? onShareToSocialMedia;
 
@@ -18,12 +19,14 @@ class MockSocialSharingPlusPlatform extends SocialSharingPlusPlatform {
     String content, {
     required bool isOpenBrowser,
     String? image,
+    String? media,
     VoidCallback? onAppNotInstalled,
   }) {
     return onShareToSocialMedia?.call(
           platform,
           content,
           image: image,
+          media: media,
           isOpenBrowser: isOpenBrowser,
           onAppNotInstalled: onAppNotInstalled,
         ) ??
