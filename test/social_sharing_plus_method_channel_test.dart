@@ -23,7 +23,7 @@ void main() {
       const image = 'image_path.png';
 
       testPlatform.onShareToSocialMedia = (platform, content,
-          {required isOpenBrowser, image, onAppNotInstalled}) async {
+          {required isOpenBrowser, image, media, onAppNotInstalled}) async {
         expect(platform, socialPlatform);
         expect(content, allOf(isA<String>(), contains('Check')));
         expect(content, equalsIgnoringCase('check this out!'));
@@ -57,7 +57,7 @@ void main() {
       var appNotInstalledCalled = false;
 
       testPlatform.onShareToSocialMedia = (platform, content,
-          {required isOpenBrowser, image, onAppNotInstalled}) async {
+          {required isOpenBrowser, image, media, onAppNotInstalled}) async {
         if (platform == SocialPlatform.twitter && !isOpenBrowser) {
           onAppNotInstalled?.call();
         }
@@ -87,7 +87,7 @@ void main() {
       var appNotInstalledCalled = false;
 
       testPlatform.onShareToSocialMedia = (platform, content,
-          {required isOpenBrowser, image, onAppNotInstalled}) async {
+          {required isOpenBrowser, image, media, onAppNotInstalled}) async {
         if (platform == SocialPlatform.twitter && !isOpenBrowser) {
           onAppNotInstalled?.call();
         }
@@ -112,7 +112,7 @@ void main() {
       const content = 'Professional update!';
 
       testPlatform.onShareToSocialMedia = (platform, content,
-          {required isOpenBrowser, image, onAppNotInstalled}) async {
+          {required isOpenBrowser, image, media, onAppNotInstalled}) async {
         expect(platform, socialPlatform);
         expect(content, allOf(isA<String>(), equals('Professional update!')));
         expect(image, isNull);
@@ -133,7 +133,7 @@ void main() {
       var appNotInstalledCalled = false;
 
       testPlatform.onShareToSocialMedia = (platform, content,
-          {required isOpenBrowser, image, onAppNotInstalled}) async {
+          {required isOpenBrowser, image, media, onAppNotInstalled}) async {
         if (platform == SocialPlatform.whatsapp && !isOpenBrowser) {
           onAppNotInstalled?.call();
         }
@@ -159,7 +159,7 @@ void main() {
       const isOpenBrowser = false;
 
       testPlatform.onShareToSocialMedia = (platform, content,
-          {required isOpenBrowser, image, onAppNotInstalled}) async {
+          {required isOpenBrowser, image, media, onAppNotInstalled}) async {
         expect(platform, socialPlatform);
         expect(content, anyOf(isA<String>(), contains('Snap')));
         expect(image, endsWith('snap_image.png'));
@@ -187,7 +187,7 @@ void main() {
 
       for (final platform in platforms) {
         testPlatform.onShareToSocialMedia = (socialPlatform, content,
-            {required isOpenBrowser, image, onAppNotInstalled}) async {
+            {required isOpenBrowser, image, media, onAppNotInstalled}) async {
           expect(socialPlatform, platform);
           expect(content, contains(platform.name));
           expect(content, isA<String>());
