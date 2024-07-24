@@ -219,16 +219,79 @@ class _SharePageState extends State<SharePage> {
 
 ### Screenshots
 
-<p float="left">
-  <img src="https://github.com/bedirhanssaglam/social_sharing_plus/assets/105479937/273ab816-49f2-42e7-a73e-9535a5f73d15" width=100" />
-  <img src="https://github.com/bedirhanssaglam/social_sharing_plus/assets/105479937/7a56408d-fc44-4def-8bdf-b831923a5a1e" width=100" />
-  <img src="https://github.com/bedirhanssaglam/social_sharing_plus/assets/105479937/a2b5051d-9303-4eb7-a6f8-82615c1e340a" width=100" />
-  <img src="https://github.com/bedirhanssaglam/social_sharing_plus/assets/105479937/97b6e132-58b3-45bc-bff8-35f1ceedcd7b" width=100" />
-  <img src="https://github.com/bedirhanssaglam/social_sharing_plus/assets/105479937/b63be060-fa90-47b5-9f25-06ff31d3a1d9" width=100" />
-  <img src="https://github.com/bedirhanssaglam/social_sharing_plus/assets/105479937/ff960417-5627-4e90-a3c1-7a719868de62" width=100" />
-  <img src="https://github.com/bedirhanssaglam/social_sharing_plus/assets/105479937/231e2a6e-6f84-45af-aef8-97da6869ec6f" width=100" />
-  <img src="https://github.com/bedirhanssaglam/social_sharing_plus/assets/105479937/fafa227a-f89a-4cab-9b7f-2bd13daf7987" width=100" />
-</p>
+<div style="text-align: center">
+    <table>
+        <tr>
+            <td style="text-align: center">
+                <a>
+                    <img src="https://github.com/user-attachments/assets/e91df29c-693a-444a-8287-ba13862bc160" width="100"/>
+                </a>
+            </td>            
+            <td style="text-align: center">
+                <a>
+                    <img src="https://github.com/user-attachments/assets/a47449d7-3c7a-4f97-a356-465894403f4e" width="100"/>
+                </a>
+            </td>
+            <td style="text-align: center">
+                <a>
+                    <img src="https://github.com/bedirhanssaglam/social_sharing_plus/assets/105479937/a2b5051d-9303-4eb7-a6f8-82615c1e340a" width="100" />
+                </a>
+            </td>
+            <td style="text-align: center">
+                <a>
+                    <img src="https://github.com/user-attachments/assets/096a4daa-3cc0-4d17-b627-9b0f82c11108" width="100" />
+                </a>
+            </td>          
+            <td style="text-align: center">
+                <a>
+                    <img src="https://github.com/user-attachments/assets/517f094d-1005-4a2d-93cc-995534688db2" width="100" />
+                </a>
+            </td>
+            <td style="text-align: center">
+                <a>
+                    <img src="https://github.com/bedirhanssaglam/social_sharing_plus/assets/105479937/b63be060-fa90-47b5-9f25-06ff31d3a1d9" width="100" />
+                </a>
+            </td>           
+        </tr>
+        <tr>
+            <td style="text-align: center">
+                <a>
+                    <img src="https://github.com/user-attachments/assets/f9ddef3e-27f5-45b5-8c53-53d3813ffe3d" width="100"/>
+                </a>
+            </td>            
+            <td style="text-align: center">
+                <a>
+                    <img src="https://github.com/bedirhanssaglam/social_sharing_plus/assets/105479937/ff960417-5627-4e90-a3c1-7a719868de62" width="100"/>
+                </a>
+            </td>
+            <td style="text-align: center">
+                <a>
+                    <img src="https://github.com/bedirhanssaglam/social_sharing_plus/assets/105479937/231e2a6e-6f84-45af-aef8-97da6869ec6f" width="100" />
+                </a>
+            </td>
+            <td style="text-align: center">
+                <a>
+                    <img src="https://github.com/user-attachments/assets/077d809e-6f15-444c-9f96-80be54dc13a4" width="100" />
+                </a>
+            </td>          
+            <td style="text-align: center">
+                <a>
+                    <img src="https://github.com/bedirhanssaglam/social_sharing_plus/assets/105479937/fafa227a-f89a-4cab-9b7f-2bd13daf7987" width="100" />
+                </a>
+            </td>
+            <td style="text-align: center">
+                <a>
+                    <img src="https://github.com/user-attachments/assets/f7831ed7-5d1c-4fbb-b8ca-181d6c59f6ac" width="100" />
+                </a>
+            </td>      
+            <td style="text-align: center">
+                <a>
+                    <img src="https://github.com/user-attachments/assets/80dee235-2d57-4c71-9920-018c3795b726" width="100" />
+                </a>
+            </td>
+        </tr>     
+    </table>
+</div>
 
 ### Dart Version
 
