@@ -1,3 +1,7 @@
+# 1.0.0
+
+- Add video sharing to Android
+
 # 0.0.4
 
 - Fix platform specific codes

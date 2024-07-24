@@ -35,7 +35,8 @@ class _SharePageState extends State<SharePage> {
   String? _mediaPath;
 
   Future<void> _pickImage() async {
-    final XFile? pickedFile = await _picker.pickImage(source: ImageSource.gallery);
+    final XFile? pickedFile =
+        await _picker.pickImage(source: ImageSource.gallery);
 
     setState(() {
       if (pickedFile != null) _mediaPath = pickedFile.path;
@@ -43,7 +44,8 @@ class _SharePageState extends State<SharePage> {
   }
 
   Future<void> _pickVideo() async {
-    final XFile? pickedFile = await _picker.pickVideo(source: ImageSource.gallery);
+    final XFile? pickedFile =
+        await _picker.pickVideo(source: ImageSource.gallery);
 
     setState(() {
       if (pickedFile != null) _mediaPath = pickedFile.path;
