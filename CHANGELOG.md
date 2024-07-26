@@ -1,3 +1,7 @@
+# 1.2.1
+
+- Update Usage part of the plugin documentation
+
 # 1.2.0
 
 - Add the `shareToSocialMediaWithMultipleMedia` method to support sharing multiple images and videos at once. (Android)

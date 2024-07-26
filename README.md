@@ -101,15 +101,18 @@ No special configuration is needed for iOS.
 
 ```yaml                    
 dependencies:
-  social_sharing_plus: ^1.2.0
+  social_sharing_plus: ^1.2.1
 ```       
 
 ### Usage
 
 ```dart
+import 'package:social_sharing_plus/social_sharing_plus.dart';
+
 static const SocialPlatform platform = SocialPlatform.facebook;
 String? _mediaPath; // add image or video path
 List<String> _mediaPaths = []; // add image or video paths
+bool isMultipleShare = true;
 
 isMultipleShare
     ? await SocialSharingPlus.shareToSocialMediaWithMultipleMedia(
