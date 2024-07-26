@@ -29,10 +29,7 @@ class SocialSharingPlus {
   static Future<void> shareToSocialMedia(
     SocialPlatform socialPlatform,
     String content, {
-    @Deprecated(
-      'The "image" parameter is deprecated. Please use the "media" parameter instead.',
-    )
-    String? image,
+    @Deprecated('Please use the "media" parameter instead.') String? image,
     String? media,
     bool isOpenBrowser = true,
     VoidCallback? onAppNotInstalled,

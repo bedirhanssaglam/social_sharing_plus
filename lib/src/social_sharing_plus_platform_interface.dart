@@ -36,9 +36,7 @@ abstract class SocialSharingPlusPlatform extends PlatformInterface {
     SocialPlatform platform,
     String content, {
     required bool isOpenBrowser,
-    @Deprecated(
-        'The "image" parameter is deprecated. Please use the "media" parameter instead.')
-    String? image,
+    @Deprecated('Please use the "media" parameter instead.') String? image,
     String? media,
     VoidCallback? onAppNotInstalled,
   });
