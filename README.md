@@ -107,103 +107,30 @@ dependencies:
 ### Usage
 
 ```dart
-class SharePage extends StatefulWidget {
-  const SharePage({super.key});
+static const SocialPlatform platform = SocialPlatform.facebook;
+String? _mediaPath; // add image or video path
+List<String> _mediaPaths = []; // add image or video paths
 
-  @override
-  State<SharePage> createState() => _SharePageState();
-}
-
-class _SharePageState extends State<SharePage> {
-  final TextEditingController _controller = TextEditingController();
-  static const List<SocialPlatform> _platforms = SocialPlatform.values;
-
-  final ImagePicker _picker = ImagePicker();
-  String? _mediaPath;
-
-  Future<void> _pickImage() async {
-    final XFile? pickedFile = await _picker.pickImage(source: ImageSource.gallery);
-
-    setState(() {
-      if (pickedFile != null) _mediaPath = pickedFile.path;
-    });
-  }
-
-  Future<void> _pickVideo() async {
-    final XFile? pickedFile = await _picker.pickVideo(source: ImageSource.gallery);
-
-    setState(() {
-      if (pickedFile != null) _mediaPath = pickedFile.path;
-    });
-  }
-
-  Future<void> _share(SocialPlatform platform) async {
-    final String content = _controller.text;
-    await SocialSharingPlus.shareToSocialMedia(
-      platform,
-      content,
-      media: _mediaPath,
-      isOpenBrowser: true,
-      onAppNotInstalled: () {
-        ScaffoldMessenger.of(context)
-          ..hideCurrentSnackBar()
-          ..showSnackBar(SnackBar(
-            content: Text('${platform.name.capitalize} is not installed.'),
-          ));
-      },
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Social Sharing Example'),
-      ),
-      body: SingleChildScrollView(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(24),
-                child: TextField(
-                  controller: _controller,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: 'Enter a text',
-                  ),
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ElevatedButton(
-                    onPressed: _pickImage,
-                    child: const Text('Pick Image'),
-                  ),
-                  const SizedBox(width: 20),
-                  if (Platform.isAndroid)
-                    ElevatedButton(
-                      onPressed: _pickVideo,
-                      child: const Text('Pick Video'),
-                    ),
-                ],
-              ),
-              const SizedBox(height: 20),
-              ..._platforms.map(
-                (SocialPlatform platform) => ElevatedButton(
-                  onPressed: () => _share(platform),
-                  child: Text('Share to ${platform.name.capitalize}'),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
+isMultipleShare
+    ? await SocialSharingPlus.shareToSocialMediaWithMultipleMedia(
+        platform,
+        media: _mediaPaths,
+        content: content,
+        isOpenBrowser: false,
+        onAppNotInstalled: () {
+          ScaffoldMessenger.of(context)
+            ..hideCurrentSnackBar()
+            ..showSnackBar(SnackBar(
+              content: Text('${platform.name.capitalize} is not installed.'),
+            ));
+        },
+      )
+    : await SocialSharingPlus.shareToSocialMedia(
+        platform,
+        content,
+        media: _mediaPath,
+        isOpenBrowser: true,
+      );
 ```
 
 ## Properties
