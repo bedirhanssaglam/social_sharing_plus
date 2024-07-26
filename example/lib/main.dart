@@ -33,6 +33,7 @@ class _SharePageState extends State<SharePage> {
 
   final ImagePicker _picker = ImagePicker();
   String? _mediaPath;
+  List<String> _mediaPaths = [];
 
   Future<void> _pickImage() async {
     final XFile? pickedFile =
@@ -52,28 +53,66 @@ class _SharePageState extends State<SharePage> {
     });
   }
 
-  Future<void> _share(SocialPlatform platform) async {
+  Future<void> _pickMultiMedia() async {
+    final List<XFile> pickedFiles = await _picker.pickMultiImage();
+
+    setState(() {
+      _mediaPaths = pickedFiles.map((file) => file.path).toList();
+    });
+  }
+
+  Future<void> _pickMultiVideo() async {
+    final XFile? pickedFile =
+        await _picker.pickVideo(source: ImageSource.gallery);
+
+    setState(() {
+      if (pickedFile != null) {
+        _mediaPaths.add(pickedFile.path);
+      }
+    });
+  }
+
+  Future<void> _share(
+    SocialPlatform platform, {
+    bool isMultipleShare = false,
+  }) async {
     final String content = _controller.text;
-    await SocialSharingPlus.shareToSocialMedia(
-      platform,
-      content,
-      media: _mediaPath,
-      isOpenBrowser: true,
-      onAppNotInstalled: () {
-        ScaffoldMessenger.of(context)
-          ..hideCurrentSnackBar()
-          ..showSnackBar(SnackBar(
-            content: Text('${platform.name.capitalize} is not installed.'),
-          ));
-      },
-    );
+    isMultipleShare
+        ? await SocialSharingPlus.shareToSocialMediaWithMultipleMedia(
+            platform,
+            media: _mediaPaths,
+            content: content,
+            isOpenBrowser: true,
+            onAppNotInstalled: () {
+              ScaffoldMessenger.of(context)
+                ..hideCurrentSnackBar()
+                ..showSnackBar(SnackBar(
+                  content:
+                      Text('${platform.name.capitalize} is not installed.'),
+                ));
+            },
+          )
+        : await SocialSharingPlus.shareToSocialMedia(
+            platform,
+            content,
+            media: _mediaPath,
+            isOpenBrowser: true,
+            onAppNotInstalled: () {
+              ScaffoldMessenger.of(context)
+                ..hideCurrentSnackBar()
+                ..showSnackBar(SnackBar(
+                  content:
+                      Text('${platform.name.capitalize} is not installed.'),
+                ));
+            },
+          );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Social Sharing Example'),
+        title: const Text('social_sharing_plus'),
       ),
       body: SingleChildScrollView(
         child: Center(
@@ -105,10 +144,30 @@ class _SharePageState extends State<SharePage> {
                     ),
                 ],
               ),
-              const SizedBox(height: 20),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                      onPressed: _pickMultiMedia,
+                      child: const Text('Pick Multi Image'),
+                    ),
+                    const SizedBox(width: 20),
+                    if (Platform.isAndroid)
+                      ElevatedButton(
+                        onPressed: _pickMultiVideo,
+                        child: const Text('Pick Multi Video'),
+                      ),
+                  ],
+                ),
+              ),
               ..._platforms.map(
                 (SocialPlatform platform) => ElevatedButton(
-                  onPressed: () => _share(platform),
+                  onPressed: () => _share(
+                    platform,
+                    isMultipleShare: true,
+                  ),
                   child: Text('Share to ${platform.name.capitalize}'),
                 ),
               ),

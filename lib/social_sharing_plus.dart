@@ -41,4 +41,29 @@ class SocialSharingPlus {
         isOpenBrowser: isOpenBrowser,
         onAppNotInstalled: onAppNotInstalled,
       );
+
+  /// Shares content to the specified social media platform with multiple media files.
+  ///
+  /// This method allows sharing multiple media files (images or videos) to the selected social media platform.
+  /// Currently, this feature is only supported on [Android].
+  ///
+  /// * [socialPlatform]: The platform to share the content on.
+  /// * [content]: The content to be shared.
+  /// * [media]: A list of media file paths (images or videos) to be shared.
+  /// * [isOpenBrowser]: Whether to open a browser if the app is not installed.
+  /// * [onAppNotInstalled]: Callback function to be called if the app is not installed.
+  static Future<void> shareToSocialMediaWithMultipleMedia(
+    SocialPlatform platform, {
+    required List<String> media,
+    String? content,
+    bool isOpenBrowser = true,
+    VoidCallback? onAppNotInstalled,
+  }) =>
+      SocialSharingPlusPlatform.instance.shareToSocialMediaWithMultipleMedia(
+        platform,
+        media: media,
+        content: content,
+        isOpenBrowser: isOpenBrowser,
+        onAppNotInstalled: onAppNotInstalled,
+      );
 }

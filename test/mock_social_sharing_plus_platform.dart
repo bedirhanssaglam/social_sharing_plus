@@ -13,6 +13,14 @@ class MockSocialSharingPlusPlatform extends SocialSharingPlusPlatform {
     VoidCallback? onAppNotInstalled,
   })? onShareToSocialMedia;
 
+  Future<void> Function(
+    SocialPlatform platform, {
+    required List<String> media,
+    required bool isOpenBrowser,
+    String? content,
+    VoidCallback? onAppNotInstalled,
+  })? onShareToSocialMediaWithMultipleMedia;
+
   @override
   Future<void> shareToSocialMedia(
     SocialPlatform platform,
@@ -27,6 +35,24 @@ class MockSocialSharingPlusPlatform extends SocialSharingPlusPlatform {
           content,
           image: image,
           media: media,
+          isOpenBrowser: isOpenBrowser,
+          onAppNotInstalled: onAppNotInstalled,
+        ) ??
+        Future<void>.value();
+  }
+
+  @override
+  Future<void> shareToSocialMediaWithMultipleMedia(
+    SocialPlatform platform, {
+    required List<String> media,
+    String? content,
+    bool isOpenBrowser = true,
+    VoidCallback? onAppNotInstalled,
+  }) {
+    return onShareToSocialMediaWithMultipleMedia?.call(
+          platform,
+          media: media,
+          content: content,
           isOpenBrowser: isOpenBrowser,
           onAppNotInstalled: onAppNotInstalled,
         ) ??
