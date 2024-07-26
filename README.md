@@ -2,6 +2,8 @@
 
 `social_sharing_plus` is a Flutter plugin that allows you to share content, images and videos to various social media platforms like Facebook, Twitter, LinkedIn, WhatsApp, Reddit, and Telegram. This package provides a simple and unified interface for sharing across different apps, handling the nuances and differences of each platform.
 
+🚀 **Exciting News!** You can now share multiple images and videos with just a few clicks! 📸🎥
+
 ## Table of contents
 
 - [Setup](#setup)
@@ -99,7 +101,7 @@ No special configuration is needed for iOS.
 
 ```yaml                    
 dependencies:
-  social_sharing_plus: <latest_version>    
+  social_sharing_plus: ^1.2.0
 ```       
 
 ### Usage
@@ -235,12 +237,12 @@ class _SharePageState extends State<SharePage> {
         <tr>
             <td style="text-align: center">
                 <a>
-                    <img src="https://github.com/user-attachments/assets/e91df29c-693a-444a-8287-ba13862bc160" width="100"/>
+                    <img src="https://github.com/user-attachments/assets/880ffe55-335f-4214-bafa-6a25843c9807" width="100"/>
                 </a>
             </td>            
             <td style="text-align: center">
                 <a>
-                    <img src="https://github.com/user-attachments/assets/a47449d7-3c7a-4f97-a356-465894403f4e" width="100"/>
+                    <img src="https://github.com/user-attachments/assets/126a422a-2bb0-4f4d-8e6b-4779944de4bc" width="100"/>
                 </a>
             </td>
             <td style="text-align: center">
@@ -262,14 +264,19 @@ class _SharePageState extends State<SharePage> {
                 <a>
                     <img src="https://github.com/bedirhanssaglam/social_sharing_plus/assets/105479937/b63be060-fa90-47b5-9f25-06ff31d3a1d9" width="100" />
                 </a>
-            </td>           
+            </td> 
+            <td style="text-align: center">
+                <a>
+                    <img src="https://github.com/user-attachments/assets/4b9ecdba-6bcd-4d11-a3e9-8a252b9a4d8b" width="100" />
+                </a>
+            </td>    
         </tr>
-        <tr>
+        <tr>        
             <td style="text-align: center">
                 <a>
                     <img src="https://github.com/user-attachments/assets/f9ddef3e-27f5-45b5-8c53-53d3813ffe3d" width="100"/>
                 </a>
-            </td>            
+            </td>             
             <td style="text-align: center">
                 <a>
                     <img src="https://github.com/bedirhanssaglam/social_sharing_plus/assets/105479937/ff960417-5627-4e90-a3c1-7a719868de62" width="100"/>
@@ -282,9 +289,9 @@ class _SharePageState extends State<SharePage> {
             </td>
             <td style="text-align: center">
                 <a>
-                    <img src="https://github.com/user-attachments/assets/077d809e-6f15-444c-9f96-80be54dc13a4" width="100" />
+                    <img src="https://github.com/user-attachments/assets/d0aaf839-0c6a-46cf-be1d-acf94f4e24d7" width="100" />
                 </a>
-            </td>          
+            </td>    
             <td style="text-align: center">
                 <a>
                     <img src="https://github.com/bedirhanssaglam/social_sharing_plus/assets/105479937/fafa227a-f89a-4cab-9b7f-2bd13daf7987" width="100" />
