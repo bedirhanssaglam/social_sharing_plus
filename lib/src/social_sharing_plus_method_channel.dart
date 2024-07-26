@@ -29,7 +29,6 @@ class MethodChannelSocialSharingPlus extends SocialSharingPlusPlatform {
     try {
       await methodChannel.invokeMethod(platform.methodName, {
         'content': content,
-        'image': image,
         'media': media,
         'isOpenBrowser': isOpenBrowser,
       });

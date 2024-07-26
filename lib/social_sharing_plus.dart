@@ -37,7 +37,6 @@ class SocialSharingPlus {
       SocialSharingPlusPlatform.instance.shareToSocialMedia(
         socialPlatform,
         content,
-        image: image,
         media: media,
         isOpenBrowser: isOpenBrowser,
         onAppNotInstalled: onAppNotInstalled,
