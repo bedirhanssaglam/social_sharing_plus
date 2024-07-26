@@ -20,7 +20,6 @@ void main() {
         () async {
       const socialPlatform = SocialPlatform.facebook;
       const content = 'Check this out!';
-      const image = 'image_path.png';
 
       testPlatform.onShareToSocialMedia = (platform, content,
           {required isOpenBrowser, image, media, onAppNotInstalled}) async {
@@ -43,7 +42,6 @@ void main() {
       await SocialSharingPlus.shareToSocialMedia(
         socialPlatform,
         content,
-        image: image,
       );
     });
 
@@ -52,7 +50,6 @@ void main() {
         () async {
       const socialPlatform = SocialPlatform.twitter;
       const content = 'Tweet this!';
-      const image = 'image_path.png';
       const isOpenBrowser = false;
       var appNotInstalledCalled = false;
 
@@ -67,7 +64,6 @@ void main() {
       await SocialSharingPlus.shareToSocialMedia(
         socialPlatform,
         content,
-        image: image,
         isOpenBrowser: isOpenBrowser,
         onAppNotInstalled: () {
           appNotInstalledCalled = true;
@@ -83,7 +79,6 @@ void main() {
         () async {
       const socialPlatform = SocialPlatform.twitter;
       const content = 'Share this photo!';
-      const image = 'image_path.png';
       var appNotInstalledCalled = false;
 
       testPlatform.onShareToSocialMedia = (platform, content,
@@ -97,7 +92,6 @@ void main() {
       await SocialSharingPlus.shareToSocialMedia(
         socialPlatform,
         content,
-        image: image,
         onAppNotInstalled: () {
           appNotInstalledCalled = true;
         },
@@ -155,7 +149,6 @@ void main() {
     test('shareToSocialMedia without onAppNotInstalled callback', () async {
       const socialPlatform = SocialPlatform.facebook;
       const content = 'Share this!';
-      const image = 'snap_image.png';
       const isOpenBrowser = false;
 
       testPlatform.onShareToSocialMedia = (platform, content,
@@ -170,7 +163,6 @@ void main() {
       await SocialSharingPlus.shareToSocialMedia(
         socialPlatform,
         content,
-        image: image,
         isOpenBrowser: isOpenBrowser,
       );
     });
@@ -200,7 +192,6 @@ void main() {
         await SocialSharingPlus.shareToSocialMedia(
           platform,
           'Sharing on ${platform.name}',
-          image: 'image_${platform.name}.png',
           isOpenBrowser: false,
         );
       }
