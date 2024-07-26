@@ -1,3 +1,7 @@
+# 1.2.0
+
+- Add the `shareToSocialMediaWithMultipleMedia` method to support sharing multiple images and videos at once. (Android)
+
 # 1.1.0
 
 - Deprecate the `image` parameter in `shareToSocialMedia` method. Users are encouraged to use the `media` parameter for sharing images and videos.
