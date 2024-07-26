@@ -13,8 +13,8 @@ class MethodChannelSocialSharingPlus extends SocialSharingPlusPlatform {
   ///
   /// * [platform]: The platform to share the content on.
   /// * [content]: The content to be shared.
-  /// * [image]: The image to be shared. (Android only)
-  /// * [media]: The video to be shared. (Android only)
+  /// * [image]: The image to be shared. (deprecated, use [media] instead)
+  /// * [media]: The video or image to be shared.
   /// * [isOpenBrowser]: Whether to open a browser if the app is not installed.
   /// * [onAppNotInstalled]: Callback function to be called if the app is not installed. If `isOpenBrowser` is true, this method is ignored.
   @override
@@ -22,6 +22,8 @@ class MethodChannelSocialSharingPlus extends SocialSharingPlusPlatform {
     SocialPlatform platform,
     String content, {
     required bool isOpenBrowser,
+    @Deprecated(
+        'The "image" parameter is deprecated. Please use the "media" parameter instead.')
     String? image,
     String? media,
     VoidCallback? onAppNotInstalled,
