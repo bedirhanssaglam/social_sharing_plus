@@ -57,13 +57,13 @@ public class SocialSharingPlusPlugin: NSObject, FlutterPlugin {
     ///   - result: FlutterResult object to complete the call.
     ///   - isOpenBrowser: Flag indicating whether to open in browser if app not installed.
     private func shareToFacebook(arguments: [String: Any], result: @escaping FlutterResult, isOpenBrowser: Bool) {
-        if let content = arguments["content"] as? String, let imageUri = arguments["image"] as? String {
+        if let content = arguments["content"] as? String, let imageUri = arguments["media"] as? String {
             shareContentAndImageToSpecificApp(content: content, imageUri: imageUri, appUrlScheme: "fb://publish/profile/me?text=\(content)", webUrlString: "https://www.facebook.com/sharer/sharer.php?u=\(content)", result: result, isOpenBrowser: isOpenBrowser)
         } else if let content = arguments["content"] as? String {
             let urlString = "fb://publish/profile/me?text=\(content)"
             let webUrlString = "https://www.facebook.com/sharer/sharer.php?u=\(content)"
             openUrl(urlString: urlString, webUrlString: webUrlString, result: result, isOpenBrowser: isOpenBrowser)
-        } else if let imageUri = arguments["image"] as? String {
+        } else if let imageUri = arguments["media"] as? String {
             shareImageToSpecificApp(imageUri: imageUri, appUrlScheme: "fb://", result: result, isOpenBrowser: isOpenBrowser)
         }
     }
@@ -75,13 +75,13 @@ public class SocialSharingPlusPlugin: NSObject, FlutterPlugin {
     ///   - result: FlutterResult object to complete the call.
     ///   - isOpenBrowser: Flag indicating whether to open in browser if app not installed.
     private func shareToTwitter(arguments: [String: Any], result: @escaping FlutterResult, isOpenBrowser: Bool) {
-        if let content = arguments["content"] as? String, let imageUri = arguments["image"] as? String {
+        if let content = arguments["content"] as? String, let imageUri = arguments["media"] as? String {
             shareContentAndImageToSpecificApp(content: content, imageUri: imageUri, appUrlScheme: "twitter://post?message=\(content)", webUrlString: "https://x.com/intent/tweet?text=\(content)", result: result, isOpenBrowser: isOpenBrowser)
         } else if let content = arguments["content"] as? String {
             let urlString = "twitter://post?message=\(content)"
             let webUrlString = "https://x.com/intent/tweet?text=\(content)"
             openUrl(urlString: urlString, webUrlString: webUrlString, result: result, isOpenBrowser: isOpenBrowser)
-        } else if let imageUri = arguments["image"] as? String {
+        } else if let imageUri = arguments["media"] as? String {
             shareImageToSpecificApp(imageUri: imageUri, appUrlScheme: "twitter://", result: result, isOpenBrowser: isOpenBrowser)
         }
     }
@@ -107,13 +107,13 @@ public class SocialSharingPlusPlugin: NSObject, FlutterPlugin {
     ///   - result: FlutterResult object to complete the call.
     ///   - isOpenBrowser: Flag indicating whether to open in browser if app not installed.
     private func shareToWhatsApp(arguments: [String: Any], result: @escaping FlutterResult, isOpenBrowser: Bool) {
-        if let content = arguments["content"] as? String, let imageUri = arguments["image"] as? String {
+        if let content = arguments["content"] as? String, let imageUri = arguments["media"] as? String {
             shareContentAndImageToSpecificApp(content: content, imageUri: imageUri, appUrlScheme: "whatsapp://send?text=\(content)", webUrlString: "https://api.whatsapp.com/send?text=\(content)", result: result, isOpenBrowser: isOpenBrowser)
         } else if let content = arguments["content"] as? String {
             let urlString = "whatsapp://send?text=\(content)"
             let webUrlString = "https://api.whatsapp.com/send?text=\(content)"
             openUrl(urlString: urlString, webUrlString: webUrlString, result: result, isOpenBrowser: isOpenBrowser)
-        } else if let imageUri = arguments["image"] as? String {
+        } else if let imageUri = arguments["media"] as? String {
             shareImageToSpecificApp(imageUri: imageUri, appUrlScheme: "whatsapp://", result: result, isOpenBrowser: isOpenBrowser)
         }
     }
@@ -139,13 +139,13 @@ public class SocialSharingPlusPlugin: NSObject, FlutterPlugin {
     ///   - result: FlutterResult object to complete the call.
     ///   - isOpenBrowser: Flag indicating whether to open in browser if app not installed.
     private func shareToTelegram(arguments: [String: Any], result: @escaping FlutterResult, isOpenBrowser: Bool) {
-        if let content = arguments["content"] as? String, let imageUri = arguments["image"] as? String {
+        if let content = arguments["content"] as? String, let imageUri = arguments["media"] as? String {
             shareContentAndImageToSpecificApp(content: content, imageUri: imageUri, appUrlScheme: "tg://msg?text=\(content)", webUrlString: "https://t.me/share/url?url=\(content)", result: result, isOpenBrowser: isOpenBrowser)
         } else if let content = arguments["content"] as? String {
             let urlString = "tg://msg?text=\(content)"
             let webUrlString = "https://t.me/share/url?url=\(content)"
             openUrl(urlString: urlString, webUrlString: webUrlString, result: result, isOpenBrowser: isOpenBrowser)
-        } else if let imageUri = arguments["image"] as? String {
+        } else if let imageUri = arguments["media"] as? String {
             shareImageToSpecificApp(imageUri: imageUri, appUrlScheme: "tg://", result: result, isOpenBrowser: isOpenBrowser)
         }
     }

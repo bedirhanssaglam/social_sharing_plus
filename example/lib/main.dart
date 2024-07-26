@@ -57,7 +57,6 @@ class _SharePageState extends State<SharePage> {
     await SocialSharingPlus.shareToSocialMedia(
       platform,
       content,
-      image: _mediaPath,
       media: _mediaPath,
       isOpenBrowser: true,
       onAppNotInstalled: () {

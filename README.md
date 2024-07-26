@@ -140,7 +140,6 @@ class _SharePageState extends State<SharePage> {
     await SocialSharingPlus.shareToSocialMedia(
       platform,
       content,
-      image: _mediaPath,
       media: _mediaPath,
       isOpenBrowser: true,
       onAppNotInstalled: () {
@@ -211,9 +210,8 @@ class _SharePageState extends State<SharePage> {
 | ----------------------- | -------- | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
 |                                                                                                                                                                    |
 | socialPlatform      | true     |                           | Platform you want to share on                                                                                                                                              |
-| content        | true     |      | Any text you want to share                                                                                          |
-| image                    | false     |      | The image you want to share                                                                                                 |
-| media (NEW)                   | false     |      | The video you want to share                                                                                                 |
+| content        | true     |      | Any text you want to share                                                                                           
+| media                   | false     |      | The image or video you want to share                                                                                                 |
 | isOpenBrowser             | false    | `true` | If the relevant application is not installed, it redirects to the link (browser) of the relevant application. |
 | onAppNotInstalled          | false    |             | This method works if the application is not installed and the `isOpenBrowser` value is set to false. (For example: Showing a Snackbar like "The application is not installed on your device."...) |
 
