@@ -1,3 +1,7 @@
+# 1.2.2
+
+- Add package image
+
 # 1.2.1
 
 - Update Usage part of the plugin documentation
