@@ -1,4 +1,6 @@
-# social_sharing_plus
+<p float="center">
+  <img src="https://github.com/user-attachments/assets/c4ae675c-af94-44c3-b24b-b46db3a07eff" />
+</p>
 
 `social_sharing_plus` is a Flutter plugin that allows you to share content, images and videos to various social media platforms like Facebook, Twitter, LinkedIn, WhatsApp, Reddit, and Telegram. This package provides a simple and unified interface for sharing across different apps, handling the nuances and differences of each platform.
 
