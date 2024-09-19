@@ -32,14 +32,14 @@ enum SocialPlatform {
   ///
   /// For [iOS], only text sharing is supported.
   ///
-  /// For [Android], you can share both text, images and video in groups, as a tweet or message.
+  /// For [Android], you can share both text, images and videos.
   whatsapp,
 
   /// Represents Telegram.
   ///
   /// For [iOS], only text sharing is supported.
   ///
-  /// For [Android], you can share both text, images and video in groups, as a tweet or message.
+  /// For [Android], you can share both text, images and videos.
   telegram;
 
   /// Returns the method name corresponding to each social media platform.
