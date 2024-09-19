@@ -12,7 +12,7 @@
 * If you haven't configured your machine with an SSH key that's known to GitHub, then
   follow [GitHub's directions](https://help.github.com/articles/generating-ssh-keys/)
   to generate an SSH key.
-* Clone your forked repo on your local development machine: `git clone git@github.com:<your_name_here>/social_sharing_plus.git`
+* Clone your forked repo on your local development machine: `git clone git@github.com:bedirhanssaglam/social_sharing_plus.git`
 
 ## Running the example project
 
@@ -29,7 +29,7 @@ We really appreciate contributions via GitHub pull requests. To contribute take 
   * Check formatting: `dart format .`
   * Run static analyses: `flutter analyze`
 * Commit your changes: `git commit -am "<your informative commit message>"`
-* Push changes to your fork: `git push origin <name_of_your_branch>`
+* Push changes to your fork: `git push origin main`
 
 Send us your pull request:
 

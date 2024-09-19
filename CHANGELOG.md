@@ -1,3 +1,7 @@
+# 1.2.3
+
+- fix: social platform public docs [(#9)](https://github.com/bedirhanssaglam/social_sharing_plus/pull/9)
+
 # 1.2.2
 
 - Add package image

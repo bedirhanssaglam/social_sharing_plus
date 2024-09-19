@@ -103,7 +103,7 @@ No special configuration is needed for iOS.
 
 ```yaml                    
 dependencies:
-  social_sharing_plus: ^1.2.2
+  social_sharing_plus: ^1.2.3
 ```       
 
 ### Usage
