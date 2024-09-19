@@ -15,13 +15,16 @@ void main() {
       SocialSharingPlusPlatform.instance = testPlatform;
     });
 
-    test('shareToSocialMedia calls onAppNotInstalled if app is not installed and isOpenBrowser is false', () async {
+    test(
+        'shareToSocialMedia calls onAppNotInstalled if app is not installed and isOpenBrowser is false',
+        () async {
       const socialPlatform = SocialPlatform.twitter;
       const content = 'Tweet this!';
       const isOpenBrowser = false;
       var appNotInstalledCalled = false;
 
-      testPlatform.onShareToSocialMedia = (platform, content, {required isOpenBrowser, image, media, onAppNotInstalled}) async {
+      testPlatform.onShareToSocialMedia = (platform, content,
+          {required isOpenBrowser, image, media, onAppNotInstalled}) async {
         if (platform == SocialPlatform.twitter && !isOpenBrowser) {
           onAppNotInstalled?.call();
         }
@@ -41,12 +44,15 @@ void main() {
       expect(appNotInstalledCalled, isA<bool>());
     });
 
-    test('shareToSocialMedia does not call onAppNotInstalled if isOpenBrowser is true', () async {
+    test(
+        'shareToSocialMedia does not call onAppNotInstalled if isOpenBrowser is true',
+        () async {
       const socialPlatform = SocialPlatform.twitter;
       const content = 'Share this photo!';
       var appNotInstalledCalled = false;
 
-      testPlatform.onShareToSocialMedia = (platform, content, {required isOpenBrowser, image, media, onAppNotInstalled}) async {
+      testPlatform.onShareToSocialMedia = (platform, content,
+          {required isOpenBrowser, image, media, onAppNotInstalled}) async {
         if (platform == SocialPlatform.twitter && !isOpenBrowser) {
           onAppNotInstalled?.call();
         }
@@ -69,7 +75,8 @@ void main() {
       const socialPlatform = SocialPlatform.linkedin;
       const content = 'Professional update!';
 
-      testPlatform.onShareToSocialMedia = (platform, content, {required isOpenBrowser, image, media, onAppNotInstalled}) async {
+      testPlatform.onShareToSocialMedia = (platform, content,
+          {required isOpenBrowser, image, media, onAppNotInstalled}) async {
         expect(platform, socialPlatform);
         expect(content, allOf(isA<String>(), equals('Professional update!')));
         expect(image, isNull);
@@ -89,7 +96,8 @@ void main() {
       const isOpenBrowser = false;
       var appNotInstalledCalled = false;
 
-      testPlatform.onShareToSocialMedia = (platform, content, {required isOpenBrowser, image, media, onAppNotInstalled}) async {
+      testPlatform.onShareToSocialMedia = (platform, content,
+          {required isOpenBrowser, image, media, onAppNotInstalled}) async {
         if (platform == SocialPlatform.whatsapp && !isOpenBrowser) {
           onAppNotInstalled?.call();
         }
