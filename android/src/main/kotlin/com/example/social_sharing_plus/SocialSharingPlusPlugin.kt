@@ -36,6 +36,8 @@ class SocialSharingPlusPlugin : FlutterPlugin, MethodCallHandler {
                     shareToSocialMedia(SocialConstants.LINKEDIN_PACKAGE_NAME, call, result)
             SocialConstants.WHATSAPP ->
                     shareToSocialMedia(SocialConstants.WHATSAPP_PACKAGE_NAME, call, result)
+            SocialConstants.WHATSAPP_BUSINESS ->
+                    shareToSocialMedia(SocialConstants.WHATSAPP_BUSINESS_PACKAGE_NAME, call, result)
             SocialConstants.REDDIT ->
                     shareToSocialMedia(SocialConstants.REDDIT_PACKAGE_NAME, call, result)
             SocialConstants.TELEGRAM ->
@@ -174,6 +176,8 @@ class SocialSharingPlusPlugin : FlutterPlugin, MethodCallHandler {
                             "${SocialConstants.LINKEDIN_WEB_URL}$content"
                     SocialConstants.WHATSAPP_PACKAGE_NAME ->
                             "${SocialConstants.WHATSAPP_WEB_URL}$content"
+                    SocialConstants.WHATSAPP_BUSINESS_PACKAGE_NAME ->
+                            "${SocialConstants.WHATSAPP_BUSINESS_WEB_URL}$content"
                     SocialConstants.REDDIT_PACKAGE_NAME ->
                             "${SocialConstants.REDDIT_WEB_URL}$content"
                     SocialConstants.TELEGRAM_PACKAGE_NAME ->

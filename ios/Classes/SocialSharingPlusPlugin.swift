@@ -39,6 +39,8 @@ public class SocialSharingPlusPlugin: NSObject, FlutterPlugin {
             shareToLinkedIn(arguments: arguments, result: result, isOpenBrowser: isOpenBrowser)
         case "shareToWhatsApp":
             shareToWhatsApp(arguments: arguments, result: result, isOpenBrowser: isOpenBrowser)
+        case "shareToWhatsAppBusiness":
+            shareToWhatsAppBusiness(arguments: arguments, result: result, isOpenBrowser: isOpenBrowser)
         case "shareToReddit":
             shareToReddit(arguments: arguments, result: result, isOpenBrowser: isOpenBrowser)
         case "shareToTelegram":
@@ -115,6 +117,24 @@ public class SocialSharingPlusPlugin: NSObject, FlutterPlugin {
             openUrl(urlString: urlString, webUrlString: webUrlString, result: result, isOpenBrowser: isOpenBrowser)
         } else if let imageUri = arguments["media"] as? String {
             shareImageToSpecificApp(imageUri: imageUri, appUrlScheme: "whatsapp://", result: result, isOpenBrowser: isOpenBrowser)
+        }
+    }
+
+    /// Shares content to WhatsApp Business.
+    ///
+    /// - Parameters:
+    ///   - arguments: Arguments dictionary containing content and image URIs.
+    ///   - result: FlutterResult object to complete the call.
+    ///   - isOpenBrowser: Flag indicating whether to open in browser if app not installed.
+    private func shareToWhatsAppBusiness(arguments: [String: Any], result: @escaping FlutterResult, isOpenBrowser: Bool) {
+        if let content = arguments["content"] as? String, let imageUri = arguments["media"] as? String {
+            shareContentAndImageToSpecificApp(content: content, imageUri: imageUri, appUrlScheme: "whatsapp-business://send?text=\(content)", webUrlString: "https://api.whatsapp.com/send?text=\(content)", result: result, isOpenBrowser: isOpenBrowser)
+        } else if let content = arguments["content"] as? String {
+            let urlString = "whatsapp-business://send?text=\(content)"
+            let webUrlString = "https://api.whatsapp.com/send?text=\(content)"
+            openUrl(urlString: urlString, webUrlString: webUrlString, result: result, isOpenBrowser: isOpenBrowser)
+        } else if let imageUri = arguments["media"] as? String {
+            shareImageToSpecificApp(imageUri: imageUri, appUrlScheme: "whatsapp-business://", result: result, isOpenBrowser: isOpenBrowser)
         }
     }
 
@@ -236,6 +256,8 @@ public class SocialSharingPlusPlugin: NSObject, FlutterPlugin {
         } else if appUrlScheme.contains("fb://") {
             urlString += "publish/profile/me?text=\(content)"
         } else if appUrlScheme.contains("whatsapp://") {
+            urlString += "send?text=\(content)"
+        } else if appUrlScheme.contains("whatsapp-business://") {
             urlString += "send?text=\(content)"
         } else if appUrlScheme.contains("tg://") {
             urlString += "msg?text=\(content)"

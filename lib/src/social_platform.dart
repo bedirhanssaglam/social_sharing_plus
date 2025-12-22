@@ -35,6 +35,13 @@ enum SocialPlatform {
   /// For [Android], you can share both text, images and videos.
   whatsapp,
 
+  /// Represents WhatsApp Business.
+  ///
+  /// For [iOS], only text sharing is supported.
+  ///
+  /// For [Android], you can share both text, images and videos.
+  whatsappBusiness,
+
   /// Represents Telegram.
   ///
   /// For [iOS], only text sharing is supported.
@@ -55,6 +62,8 @@ enum SocialPlatform {
         return 'shareToTwitter';
       case SocialPlatform.whatsapp:
         return 'shareToWhatsApp';
+      case SocialPlatform.whatsappBusiness:
+        return 'shareToWhatsAppBusiness';
       case SocialPlatform.telegram:
         return 'shareToTelegram';
     }
