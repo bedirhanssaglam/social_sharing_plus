@@ -6,6 +6,8 @@
 
 🚀 **Exciting News!** You can now share multiple images and videos with text(optional)! 📸🎥
 
+Instagram also has dedicated APIs for Direct text, Feed (single and multiple files), Reels, and Stories on both Android and iOS.
+
 ## Table of contents
 
 - [Setup](#setup)
@@ -54,6 +56,8 @@ You need to add the following queries to your app's AndroidManifest.xml file to 
         <package android:name="com.whatsapp" />
         <!-- Query for Telegram -->
         <package android:name="org.telegram.messenger" />
+        <!-- Query for Instagram -->
+        <package android:name="com.instagram.android" />
     </queries>
 
     <application>
@@ -95,7 +99,28 @@ This `<provider>` tag specifies the authorization of your file provider and what
 <details>
 <summary>iOS (click to expand)</summary>
 
-No special configuration is needed for iOS.
+Add the URL schemes you want to query to your app's `Info.plist`:
+
+```xml
+<key>LSApplicationQueriesSchemes</key>
+<array>
+    <string>fb</string>
+    <string>twitter</string>
+    <string>linkedin</string>
+    <string>whatsapp</string>
+    <string>reddit</string>
+    <string>tg</string>
+    <string>instagram</string>
+    <string>instagram-stories</string>
+</array>
+```
+
+If you want to share media to Instagram on iOS, also add a photo library usage description:
+
+```xml
+<key>NSPhotoLibraryUsageDescription</key>
+<string>Allow access to photos for Instagram sharing.</string>
+```
 
 </details>
 
@@ -136,6 +161,35 @@ isMultipleShare
         media: _mediaPath,
         isOpenBrowser: true,
       );
+
+await SocialSharingPlus.shareToInstagramDirect(
+  'Hello from Instagram Direct',
+);
+
+await SocialSharingPlus.shareToInstagramFeed(
+  '/path/to/image-or-video.jpg',
+  content: 'Optional caption',
+);
+
+await SocialSharingPlus.shareToInstagramFeedMultiple(
+  [
+    '/path/to/image-1.jpg',
+    '/path/to/image-2.jpg',
+  ],
+);
+
+await SocialSharingPlus.shareToInstagramReels(
+  '/path/to/video.mp4',
+);
+
+await SocialSharingPlus.shareToInstagramStory(
+  appId: 'YOUR_META_APP_ID',
+  stickerImage: '/path/to/sticker.png',
+  backgroundImage: '/path/to/background.jpg',
+  backgroundTopColor: '#F5A623',
+  backgroundBottomColor: '#4A90E2',
+  attributionURL: 'https://example.com',
+);
 ```
 
 ## Properties

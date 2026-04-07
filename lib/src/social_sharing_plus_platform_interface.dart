@@ -44,7 +44,9 @@ abstract class SocialSharingPlusPlatform extends PlatformInterface {
   /// Shares content to the specified social media platform with multiple media files.
   ///
   /// This method allows sharing multiple media files (images or videos) to the selected social media platform.
-  /// Currently, this feature is only supported on [Android].
+  /// This feature is primarily intended for [Android]. On [iOS], Instagram is
+  /// forwarded to its native handler while other platforms fall back to the
+  /// first media file.
   ///
   /// * [socialPlatform]: The platform to share the content on.
   /// * [content]: The content to be shared.
@@ -55,6 +57,49 @@ abstract class SocialSharingPlusPlatform extends PlatformInterface {
     SocialPlatform platform, {
     required List<String> media,
     String? content,
+    bool isOpenBrowser = true,
+    VoidCallback? onAppNotInstalled,
+  });
+
+  /// Shares a text message to Instagram Direct.
+  Future<void> shareInstagramDirect(
+    String message, {
+    bool isOpenBrowser = true,
+    VoidCallback? onAppNotInstalled,
+  });
+
+  /// Shares an image or video to the Instagram feed.
+  Future<void> shareInstagramFeed(
+    String filePath, {
+    String? content,
+    bool isOpenBrowser = true,
+    VoidCallback? onAppNotInstalled,
+  });
+
+  /// Shares multiple files to the Instagram feed.
+  Future<void> shareInstagramFeedMultiple(
+    List<String> filePaths, {
+    String? content,
+    bool isOpenBrowser = true,
+    VoidCallback? onAppNotInstalled,
+  });
+
+  /// Shares a video to Instagram Reels.
+  Future<void> shareInstagramReels(
+    String videoPath, {
+    bool isOpenBrowser = true,
+    VoidCallback? onAppNotInstalled,
+  });
+
+  /// Shares media to Instagram Stories.
+  Future<void> shareInstagramStory({
+    required String appId,
+    String? stickerImage,
+    String? backgroundImage,
+    String? backgroundVideo,
+    String? backgroundTopColor,
+    String? backgroundBottomColor,
+    String? attributionURL,
     bool isOpenBrowser = true,
     VoidCallback? onAppNotInstalled,
   });
