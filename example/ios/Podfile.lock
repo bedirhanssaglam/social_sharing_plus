@@ -19,10 +19,10 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/social_sharing_plus/ios"
 
 SPEC CHECKSUMS:
-  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
-  image_picker_ios: c560581cceedb403a6ff17f2f816d7fea1421fc1
-  social_sharing_plus: 4de905e24a6bd238241cf995a849c4271dd0a47e
+  Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
+  image_picker_ios: e0ece4aa2a75771a7de3fa735d26d90817041326
+  social_sharing_plus: e6024862e5a4be59ef8c97a93558cba1043628bf
 
-PODFILE CHECKSUM: c2815800a22576b3d3c1e7218627f82d576b3c1d
+PODFILE CHECKSUM: 01144f57ea96329f67241f1e4266ac71875bebcc
 
-COCOAPODS: 1.15.2
+COCOAPODS: 1.16.2

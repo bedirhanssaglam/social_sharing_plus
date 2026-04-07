@@ -21,6 +21,44 @@ class MockSocialSharingPlusPlatform extends SocialSharingPlusPlatform {
     VoidCallback? onAppNotInstalled,
   })? onShareToSocialMediaWithMultipleMedia;
 
+  Future<void> Function(
+    String message, {
+    bool isOpenBrowser,
+    VoidCallback? onAppNotInstalled,
+  })? onShareInstagramDirect;
+
+  Future<void> Function(
+    String filePath, {
+    String? content,
+    bool isOpenBrowser,
+    VoidCallback? onAppNotInstalled,
+  })? onShareInstagramFeed;
+
+  Future<void> Function(
+    List<String> filePaths, {
+    String? content,
+    bool isOpenBrowser,
+    VoidCallback? onAppNotInstalled,
+  })? onShareInstagramFeedMultiple;
+
+  Future<void> Function(
+    String videoPath, {
+    bool isOpenBrowser,
+    VoidCallback? onAppNotInstalled,
+  })? onShareInstagramReels;
+
+  Future<void> Function({
+    required String appId,
+    String? stickerImage,
+    String? backgroundImage,
+    String? backgroundVideo,
+    String? backgroundTopColor,
+    String? backgroundBottomColor,
+    String? attributionURL,
+    bool isOpenBrowser,
+    VoidCallback? onAppNotInstalled,
+  })? onShareInstagramStory;
+
   @override
   Future<void> shareToSocialMedia(
     SocialPlatform platform,
@@ -53,6 +91,92 @@ class MockSocialSharingPlusPlatform extends SocialSharingPlusPlatform {
           platform,
           media: media,
           content: content,
+          isOpenBrowser: isOpenBrowser,
+          onAppNotInstalled: onAppNotInstalled,
+        ) ??
+        Future<void>.value();
+  }
+
+  @override
+  Future<void> shareInstagramDirect(
+    String message, {
+    bool isOpenBrowser = true,
+    VoidCallback? onAppNotInstalled,
+  }) {
+    return onShareInstagramDirect?.call(
+          message,
+          isOpenBrowser: isOpenBrowser,
+          onAppNotInstalled: onAppNotInstalled,
+        ) ??
+        Future<void>.value();
+  }
+
+  @override
+  Future<void> shareInstagramFeed(
+    String filePath, {
+    String? content,
+    bool isOpenBrowser = true,
+    VoidCallback? onAppNotInstalled,
+  }) {
+    return onShareInstagramFeed?.call(
+          filePath,
+          content: content,
+          isOpenBrowser: isOpenBrowser,
+          onAppNotInstalled: onAppNotInstalled,
+        ) ??
+        Future<void>.value();
+  }
+
+  @override
+  Future<void> shareInstagramFeedMultiple(
+    List<String> filePaths, {
+    String? content,
+    bool isOpenBrowser = true,
+    VoidCallback? onAppNotInstalled,
+  }) {
+    return onShareInstagramFeedMultiple?.call(
+          filePaths,
+          content: content,
+          isOpenBrowser: isOpenBrowser,
+          onAppNotInstalled: onAppNotInstalled,
+        ) ??
+        Future<void>.value();
+  }
+
+  @override
+  Future<void> shareInstagramReels(
+    String videoPath, {
+    bool isOpenBrowser = true,
+    VoidCallback? onAppNotInstalled,
+  }) {
+    return onShareInstagramReels?.call(
+          videoPath,
+          isOpenBrowser: isOpenBrowser,
+          onAppNotInstalled: onAppNotInstalled,
+        ) ??
+        Future<void>.value();
+  }
+
+  @override
+  Future<void> shareInstagramStory({
+    required String appId,
+    String? stickerImage,
+    String? backgroundImage,
+    String? backgroundVideo,
+    String? backgroundTopColor,
+    String? backgroundBottomColor,
+    String? attributionURL,
+    bool isOpenBrowser = true,
+    VoidCallback? onAppNotInstalled,
+  }) {
+    return onShareInstagramStory?.call(
+          appId: appId,
+          stickerImage: stickerImage,
+          backgroundImage: backgroundImage,
+          backgroundVideo: backgroundVideo,
+          backgroundTopColor: backgroundTopColor,
+          backgroundBottomColor: backgroundBottomColor,
+          attributionURL: attributionURL,
           isOpenBrowser: isOpenBrowser,
           onAppNotInstalled: onAppNotInstalled,
         ) ??

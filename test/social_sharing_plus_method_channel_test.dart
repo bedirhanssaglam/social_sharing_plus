@@ -115,5 +115,53 @@ void main() {
 
       expect(appNotInstalledCalled, isTrue);
     });
+
+    test('shareToInstagramDirect forwards the message to the platform',
+        () async {
+      const message = 'Hello Instagram';
+
+      testPlatform.onShareInstagramDirect = (
+        directMessage, {
+        isOpenBrowser = true,
+        onAppNotInstalled,
+      }) async {
+        expect(directMessage, message);
+        expect(isOpenBrowser, isTrue);
+      };
+
+      await SocialSharingPlus.shareToInstagramDirect(message);
+    });
+
+    test('shareToInstagramStory forwards all story arguments', () async {
+      testPlatform.onShareInstagramStory = ({
+        required appId,
+        stickerImage,
+        backgroundImage,
+        backgroundVideo,
+        backgroundTopColor,
+        backgroundBottomColor,
+        attributionURL,
+        isOpenBrowser = true,
+        onAppNotInstalled,
+      }) async {
+        expect(appId, '123');
+        expect(stickerImage, 'sticker.png');
+        expect(backgroundVideo, 'video.mp4');
+        expect(backgroundTopColor, '#FFFFFF');
+        expect(backgroundBottomColor, '#000000');
+        expect(attributionURL, 'https://example.com');
+        expect(isOpenBrowser, isFalse);
+      };
+
+      await SocialSharingPlus.shareToInstagramStory(
+        appId: '123',
+        stickerImage: 'sticker.png',
+        backgroundVideo: 'video.mp4',
+        backgroundTopColor: '#FFFFFF',
+        backgroundBottomColor: '#000000',
+        attributionURL: 'https://example.com',
+        isOpenBrowser: false,
+      );
+    });
   });
 }

@@ -6,6 +6,7 @@
         <package android:name="com.reddit.frontpage" />
         <package android:name="com.whatsapp" />
         <package android:name="org.telegram.messenger" />
+        <package android:name="com.instagram.android" />
     </queries>
     <application
         android:label="social_sharing_plus_example"

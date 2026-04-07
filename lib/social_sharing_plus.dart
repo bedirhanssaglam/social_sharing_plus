@@ -45,7 +45,9 @@ class SocialSharingPlus {
   /// Shares content to the specified social media platform with multiple media files.
   ///
   /// This method allows sharing multiple media files (images or videos) to the selected social media platform.
-  /// Currently, this feature is only supported on [Android].
+  /// This feature is primarily intended for [Android]. On [iOS], Instagram is
+  /// forwarded to its native handler while other platforms fall back to the
+  /// first media file.
   ///
   /// * [socialPlatform]: The platform to share the content on.
   /// * [content]: The content to be shared.
@@ -63,6 +65,82 @@ class SocialSharingPlus {
         platform,
         media: media,
         content: content,
+        isOpenBrowser: isOpenBrowser,
+        onAppNotInstalled: onAppNotInstalled,
+      );
+
+  /// Shares a text message to Instagram Direct.
+  static Future<void> shareToInstagramDirect(
+    String message, {
+    bool isOpenBrowser = true,
+    VoidCallback? onAppNotInstalled,
+  }) =>
+      SocialSharingPlusPlatform.instance.shareInstagramDirect(
+        message,
+        isOpenBrowser: isOpenBrowser,
+        onAppNotInstalled: onAppNotInstalled,
+      );
+
+  /// Shares an image or video to the Instagram feed.
+  static Future<void> shareToInstagramFeed(
+    String filePath, {
+    String? content,
+    bool isOpenBrowser = true,
+    VoidCallback? onAppNotInstalled,
+  }) =>
+      SocialSharingPlusPlatform.instance.shareInstagramFeed(
+        filePath,
+        content: content,
+        isOpenBrowser: isOpenBrowser,
+        onAppNotInstalled: onAppNotInstalled,
+      );
+
+  /// Shares multiple files to the Instagram feed.
+  static Future<void> shareToInstagramFeedMultiple(
+    List<String> filePaths, {
+    String? content,
+    bool isOpenBrowser = true,
+    VoidCallback? onAppNotInstalled,
+  }) =>
+      SocialSharingPlusPlatform.instance.shareInstagramFeedMultiple(
+        filePaths,
+        content: content,
+        isOpenBrowser: isOpenBrowser,
+        onAppNotInstalled: onAppNotInstalled,
+      );
+
+  /// Shares a video to Instagram Reels.
+  static Future<void> shareToInstagramReels(
+    String videoPath, {
+    bool isOpenBrowser = true,
+    VoidCallback? onAppNotInstalled,
+  }) =>
+      SocialSharingPlusPlatform.instance.shareInstagramReels(
+        videoPath,
+        isOpenBrowser: isOpenBrowser,
+        onAppNotInstalled: onAppNotInstalled,
+      );
+
+  /// Shares media to Instagram Stories.
+  static Future<void> shareToInstagramStory({
+    required String appId,
+    String? stickerImage,
+    String? backgroundImage,
+    String? backgroundVideo,
+    String? backgroundTopColor,
+    String? backgroundBottomColor,
+    String? attributionURL,
+    bool isOpenBrowser = true,
+    VoidCallback? onAppNotInstalled,
+  }) =>
+      SocialSharingPlusPlatform.instance.shareInstagramStory(
+        appId: appId,
+        stickerImage: stickerImage,
+        backgroundImage: backgroundImage,
+        backgroundVideo: backgroundVideo,
+        backgroundTopColor: backgroundTopColor,
+        backgroundBottomColor: backgroundBottomColor,
+        attributionURL: attributionURL,
         isOpenBrowser: isOpenBrowser,
         onAppNotInstalled: onAppNotInstalled,
       );
